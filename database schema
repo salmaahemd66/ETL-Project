@@ -1,0 +1,16 @@
+create table orders(order_id int , 
+				   customer_id  int, 
+				   order_status  int,
+   				   order_date date,
+    			   required_date  date,
+   				   shipped_date   date,
+                   store_id   int,
+                   staff_id  int);
+create table order_items(order_id  int , 
+				   item_id 	varchar(250), 
+				   product_id int,
+   				   quantity int,
+    			   list_price 	float,
+   				   discount     float);
+copy orders FROM '/home/salma/source/orders.csv' DELIMITER ',' CSV NULL 'NULL' HEADER;
+copy order_items FROM '/home/salma/source/order_items.csv' DELIMITER ',' CSV NULL 'NULL' HEADER;
